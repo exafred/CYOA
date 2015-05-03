@@ -1,0 +1,22 @@
+@charset "UTF-8";
+/* CSS Document */
+
+
+/*	COLORS
+/	light forest green = rgb(202, 234, 174)
+/	fuschia pastel = rgb(252, 203, 255)
+/	light pastel blue = rgb(222, 220, 250)
+*/
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family:"Gill Sans MT", Arial, Helvetica, sans-serif;
+}
+body {
+    color: #333333;
+    background-color: #eeeeee;
+	background-image: url(../img/bg_mouse.png);
+	backgorund-position: top left;
+	background-repeat: no-repeat;
+	font-size: 1em;
+}

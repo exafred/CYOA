@@ -1,0 +1,74 @@
+@charset "UTF-8";
+/* CSS Document */
+
+.page {
+    width: 600px;
+    min-height: 750px;
+    margin: 10px auto;
+    padding: 10px;
+    position: relative;
+    background-color: #fafafa !important;
+	background-image:url(../img/mousie_away_50.png);
+	background-position: center 100px;
+	background-repeat: no-repeat;
+    border-radius: 3px;
+    box-shadow:0px 1px 4px 0px #333333;
+    -o-box-shadow:0px 1px 4px 0px #333333;
+    -moz-box-shadow:0px 1px 4px 0px #333333;
+    -webkit-box-shadow:0px 1px 4px 0px #333333;
+}
+.pageNo {
+    float: right;
+    margin: 5px 15px 15px;
+    font-size: 20px;
+    color: #888888;
+}
+.pageLabel {
+    font-size: 16px;
+    color: #888888;
+}
+.pageTitle {
+    position: absolute;
+    bottom: 10px;
+    color: #aaa;
+}
+.pageContent {
+    clear: both;
+    text-align: justify;
+    padding: 5px 55px 10px;
+    min-height: 400px;
+    margin: 0px 0px 15px;
+}
+.pageChoices {
+    border-top: 1px solid #dddddd;
+    padding-top: 5px;
+}
+.pageChoices .choice {
+    padding: 5px 5px 10px;
+    margin: 5px 0px 0px;
+    min-height: 60px;
+    border-bottom: 1px solid #dddddd;
+}
+.choice .targetPage {
+    display: block;
+    float: left;
+    width: 140px;
+    padding: 5px;
+    height: 100%;
+    font-weight: bold;
+}
+.choice .choiceDescription {
+    display: inline-block;
+    width: 430px;
+    padding: 5px;
+}
+.pageChoices .choice:hover {
+    background-color: pink;
+    border-radius: 3px;
+    cursor: pointer;
+}
+/* colors */
+
+/* light forest green = rgb(202, 234, 174)
+/* fuschia pastel = rgb(252, 203, 255)
+/* light pastel blue = rgb(222, 220, 250)
