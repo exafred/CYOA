@@ -1,6 +1,13 @@
 <?php
 	session_start();
 	include('inc/mysqli_connect.php');
+	
+	// $book will eventually be generated automatically. For testing, it is 1
+	$book = 1;
+	
+	// set variables for book size properties
+	$page_ratio =  0.70;
+	$page_orientation = 'p';
 ?>
 <?php
 	$pagesquery = "
@@ -10,6 +17,7 @@
 		`content`
 	FROM `page`
 	WHERE `publish` = 1
+	AND `book_id` = '$book'
 	ORDER BY `number` ASC;";
 	$pagesresult = mysqli_query($dbc, $pagesquery);
 	
@@ -19,7 +27,7 @@
 		$pages[$p['number']]['choices'] = array();
 	}
 	
-	$choicesquery = "SELECT * FROM `choice`;";
+	$choicesquery = "SELECT * FROM `choice` WHERE `book_id` = $book;";
 	$choicesresult = mysqli_query($dbc, $choicesquery);
 	
 	while($c = mysqli_fetch_assoc($choicesresult)) {
@@ -65,7 +73,27 @@ $(document).ready(function(e) {
 	// create first page
 	createPage(CYOA, pages, 1);
 	
-	// handle choice selection
+
+	// create globovar for pages' orientation: p | l
+	var orientation = "<?=$page_orientation?>";
+	
+	// create globovar for the "margins" of the book, relative to its parent
+	var percentage_offset = 3;
+	
+	
+	// create globovar for the ratio to use for page (see above for ref)
+	// 0.7067 : original (drafft4) dimensions
+	var page_ratio = <?=$page_ratio?>;
+	
+	// resize on initial load
+	resizeBook(CYOA, orientation, percentage_offset, true, page_ratio);
+	
+	// resize on window resize
+	$(window).resize(function(e) {
+		resizeBook(CYOA, orientation, percentage_offset, false, page_ratio);
+	});
+
+// handle choice selection
 	$(document).on('click', 'div.cyoa div.page div.pageChoices p.choice', function(e) {
 		e.stopPropagation();
 		createPage(CYOA, pages, $(this).attr('data-target'));
@@ -108,6 +136,39 @@ function createPage(instance, list, target) {
 		});
 	}
 }
+
+/*################
+## RESIZE PAGES ##
+################*/
+function resizeBook(pajs_book, orientation, percentage_offset, is_initial_load, ratio) {
+	var w,h,mt;
+	
+	// currently working on $(window), this could later be changed to work on pajs_book's parent
+	
+	// calculate height and width based on orientation
+	// the "shorter" side is near-exactly 70.70% shorter than the longer side
+	// e.g. for portrait, width is 70.7% of height
+	if(orientation == "p") {
+		h = pajs_book.parent().height();
+		w = h * ratio;
+	} else {
+		h = pajs_book.parent().height();
+		w = h / ratio;
+	}
+	
+	// modify with percentage offset
+	w	= Math.round(w - (w * (percentage_offset / 100)));
+	mt	= Math.round(h * (percentage_offset / 100));
+	h	= Math.round(h - (2 * mt));
+	
+	//console.log("book dims & top margin value:", h,w,mt);
+	pajs_book.css({
+		"width":		w+"px",
+		"height":		h+"px",
+		"top":			mt+"px",
+	});
+}
+
 </script>
 </head>
 <body>

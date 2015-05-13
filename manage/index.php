@@ -1,8 +1,17 @@
 <?php
 	session_start();
-	include('inc/mysqli_connect.php');
+	include('../inc/mysqli_connect.php');
 ?>
 <?php
+	$booksquery = "SELECT * FROM `book`;";
+	$booksresult = mysqli_query($dbc, $booksquery);
+	
+	$books = array();
+	while($b = mysqli_fetch_assoc($booksresult)) {
+		$books[] = $b;
+	}
+	
+	#///////
 	$pagesquery = "
 	SELECT 
 		*
@@ -16,6 +25,7 @@
 		$pages[$p['number']]['choices'] = array();
 	}
 	
+	#///////
 	$choicesquery = "SELECT * FROM `choice`;";
 	$choicesresult = mysqli_query($dbc, $choicesquery);
 	
@@ -31,41 +41,20 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>Manage Your Own Adventure!</title>
 
-<link rel="stylesheet" href="../css/global.css" />
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="../css/main.css" />
 <link rel="stylesheet" href="../css/manage_pages.css" />
 
 <script type="text/javascript" src="../js/jquery.js"></script>
-<script type="text/javascript">var pages = <?=json_encode($pages);?>;</script>
 <script type="text/javascript">
 $(document).ready(function(e) {
+	
+	var GD = 250;
 	
 });
 </script>
 </head>
 <body>
-	OKSO
-	<br />make a list of AJAX updateable pages and choices
-	<br />----with auto-renumbering for pages
-	<br />----HTML editing capabilities for page content
-	<br />----AJAX'd link info for choices (i.e. popup for intended target page content)
-	<br />
-	<br />make add new page ability
-	<br />----again, with renumbering (can this be done in MySQL?)
-	<br />
-	<br /><em>don't forget that choices need to be updated when page numbers are, btw</em>
-	<br />
-	<br />... + ?
-	<br />
-	<br /><em><small>I'd also like the ability to create a link diagram for all the choices &amp; pages</small></em>
-	<?php
-		foreach($pages as $page) {
-			echo
-			'<div class="page" data-id="">
-				<div class="element">
-					<div class="label">number</div>
-				</div>
-		}
-	?>
 	
 </body>
 </html>

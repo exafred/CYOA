@@ -12,11 +12,16 @@
     padding: 0px;
     font-family:"Gill Sans MT", Arial, Helvetica, sans-serif;
 }
+html,
+body {
+	height: 100%;
+	width: 100%;
+}
 body {
     color: #333333;
     background-color: #eeeeee;
 	background-image: url(../img/bg_mouse.png);
-	backgorund-position: top left;
+	background-position: top left;
 	background-repeat: no-repeat;
 	font-size: 1em;
 }
