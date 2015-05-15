@@ -1,0 +1,184 @@
+
+/*###########
+##	BOOKS ONLY
+####*/
+div.booklist {
+	
+}
+div.booklist div.item {
+	
+}
+div.booklist div.item div.title {
+	
+}
+div.booklist div.item div.subtitle {
+	
+}
+div.booklist div.item div.number_of_pages {
+	
+}
+div.booklist div.item div.number_of_pages span.number {
+	
+}
+div.booklist div.item div.acknowledgements {
+	
+}
+div.booklist div.item div.notes {
+	
+}
+div.booklist div.item a.outref {
+	
+}
+div.booklist div.item a.outref:hover {
+	
+}
+div.booklist div.item a.outref:active {
+	
+}
+
+/*###########
+##	SINGLE BOOK
+####*/
+div.single.book {
+	
+}
+div.single.book div.title {
+	
+}
+div.single.book div.subtitle {
+	
+}
+div.single.book div.number_of_pages {
+	
+}
+div.single.book div.number_of_pages span.number {
+	
+}
+div.single.book div.acknowledgements {
+	
+}
+div.single.book div.notes {
+	
+}
+
+/*###########
+##	LIST OF PAGES
+####*/
+div.pagelist {
+	
+}
+div.pagelist div.item {
+	
+}
+div.pagelist div.item div.page_number {
+	
+}
+div.pagelist div.item div.page_number span.number {
+	
+}
+div.pagelist div.item div.title {
+	
+}
+div.pagelist div.item div.content {
+	
+}
+div.pagelist div.item div.date {
+	
+}
+div.pagelist div.item div.date.first_added {
+	
+}
+div.pagelist div.item div.date.last_modified {
+	
+}
+div.pagelist div.item div.currently.visible {
+	
+}
+div.pagelist div.item div.currently.visible.yes {
+	
+}
+div.pagelist div.item a.outref {
+	
+}
+div.pagelist div.item a.outref:hover {
+	
+}
+div.pagelist div.item a.outref:active {
+	
+}
+
+
+/*###########
+##	SINGLE PAGE
+####*/
+div.single.page {
+	
+}
+div.single.page div.page_number {
+	
+}
+div.single.page div.page_number span.number {
+	
+}
+div.single.page div.title {
+	
+}
+div.single.page div.content {
+	
+}
+div.single.page div.currently.visible {
+	
+}
+div.single.page div.currently.visible.yes {
+	
+}
+div.single.page {
+	
+}
+
+/*###########
+##	LIST OF CHOICES
+####*/
+div.page.choices {
+	
+}
+div.page.choices div.choice {
+	
+}
+div.page.choices div.choice {
+	
+}
+div.page.choices div.choice div.relation {
+	
+}
+div.page.choices div.choice div.relation div.current.target.page {
+	
+}
+div.page.choices div.choice div.relation span.move_choice {
+	
+}
+div.page.choices div.choice div.relation span.move_target {
+	
+}
+div.page.choices div.choice div.choice_text {
+	
+}
+
+/*###########
+##	NEW THINGS (ADDING OF X)
+####*/
+
+
+/*###########
+##	BOOKS
+####*/
+
+
+/*###########
+##	PAGES
+####*/
+
+
+/*###########
+##	CHOICES
+####*/
